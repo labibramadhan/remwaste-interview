@@ -7,7 +7,7 @@
     "build": "farm build",
     "preview": "farm preview",
     "clean": "farm clean",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --check .",
     "prepare": "husky install"
   },
