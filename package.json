@@ -1,0 +1,45 @@
+{
+  "name": "skiphire-showcase",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "farm start",
+    "start": "farm start",
+    "build": "farm build",
+    "preview": "farm preview",
+    "clean": "farm clean",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --check .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.6",
+    "i": "^0.3.7",
+    "pnpm": "^10.10.0",
+    "postcss": "^8.5.3",
+    "react": "18",
+    "react-dom": "18",
+    "tailwindcss": "^4.1.6",
+    "zustand": "^5.0.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@farmfe/cli": "^1.0.4",
+    "@farmfe/core": "^1.6.7",
+    "@farmfe/js-plugin-postcss": "^1.12.0",
+    "@farmfe/plugin-react": "^1.2.0",
+    "@types/react": "18",
+    "@types/react-dom": "18",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "core-js": "^3.36.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.5.3",
+    "react-refresh": "^0.14.0",
+    "typescript-eslint": "^8.32.0"
+  }
+}
