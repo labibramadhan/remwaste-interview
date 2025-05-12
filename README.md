@@ -2,6 +2,8 @@
 
 A modern web application for skip hiring services, built with React, TypeScript, and Tailwind CSS using atomic design principles.
 
+**Live Demo:** [https://remwaste-interview.labib.dev](https://remwaste-interview.labib.dev)
+
 ## Setup
 
 Install the dependencies:
