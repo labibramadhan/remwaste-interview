@@ -5,7 +5,7 @@ import {
   createRootRoute,
   Outlet,
   redirect,
-  createHashHistory,
+  createBrowserHistory,
 } from '@tanstack/react-router';
 import SkipSelectionPage from './modules/order/pages/SkipSelectionPage';
 import { ErrorPage } from './components/organisms';
@@ -39,7 +39,7 @@ const selectSkipRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([indexRoute, selectSkipRoute]);
 
-const routerHistory = createHashHistory();
+const routerHistory = createBrowserHistory();
 
 const router = createRouter({ routeTree, history: routerHistory });
 
