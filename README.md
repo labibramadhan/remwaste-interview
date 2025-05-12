@@ -43,29 +43,34 @@ pnpm clean
 The project follows an atomic design pattern with a domain-driven approach:
 
 ```
+cypress/                  # Cypress testing directory
+├── e2e/                # End-to-end tests (.cy.ts files)
+├── fixtures/           # Test data for mocking API responses
+└── support/            # Support files (commands, configuration)
+
 src/
 ├── components/       # Global shared components
 │   ├── atoms/        # Basic building blocks (buttons, inputs, etc.)
 │   ├── molecules/    # Combinations of atoms (form fields, cards, etc.)
 │   └── organisms/    # Complex UI components composed of molecules and atoms
+├── config/           # Configuration files
+│   └── env.ts        # Environment variables configuration
 ├── constants/        # Application-wide constants
 │   └── waste.ts      # Constants related to waste types and percentages
 ├── hooks/            # Global shared hooks
-├── modules/          # Feature modules
+├── modules/          # Feature modules using atomic design pattern
 │   ├── order/        # Order-related features
 │   │   ├── components/  # Components specific to the order module
-│   │   │   ├── atoms/
-│   │   │   ├── molecules/
-│   │   │   └── organisms/
-│   │   ├── hooks/       # Hooks for the order module
-│   │   ├── pages/       # Pages for the order module
-│   │   └── store/       # Zustand store for the order module
-│   ├── skips/           # Skip-related features
-│   │   ├── components/  # Skip-specific components
-│   │   └── hooks/       # Skip-specific hooks (e.g., useSkips)
-│   └── waste/           # Waste-related features
-│       ├── components/  # Waste-specific components
-│       └── utils/       # Waste-specific utility functions
+│   │   │   ├── atoms/      # Basic order UI elements
+│   │   │   ├── molecules/  # Composed order elements (SkipCard, NavigationTab)
+│   │   │   └── organisms/  # Complex order components (SkipSelectionGrid)
+│   │   ├── hooks/       # Order-specific hooks
+│   │   ├── pages/       # Page components (SkipSelectionPage)
+│   │   └── store/       # Zustand store for order state management
+│   ├── skips/        # Skip-related features
+│   │   └── hooks/    # Skip-specific hooks (useSkips for API integration)
+│   └── waste/        # Waste-related features
+│       └── utils/    # Waste validation and processing utilities
 ├── types/           # TypeScript type definitions
 │   ├── skip.ts      # Skip-related types and interfaces
 │   └── waste.ts     # Waste-related types and interfaces
