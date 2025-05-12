@@ -55,8 +55,8 @@ importers:
         specifier: ^1.13.0
         version: 1.13.0(@farmfe/core@1.7.5)(less@4.3.0)
       '@farmfe/js-plugin-tailwindcss':
-        specifier: ^0.0.12
-        version: 0.0.12
+        specifier: ^0.0.14
+        version: 0.0.14
       '@farmfe/plugin-react':
         specifier: ^1.2.0
         version: 1.2.6
@@ -346,8 +346,8 @@ packages:
       '@farmfe/core': ^1.7.0
       less: ^3.5.0 || ^4.0.0
 
-  '@farmfe/js-plugin-tailwindcss@0.0.12':
-    resolution: {integrity: sha512-Mjshcv3nsbweezWcJl7jNhu9sa7Ll4piNyRTUBhkCE6Xo0DHz3m5KACsVeTRi7IHIDte/UuESydeKVVlfqmrBQ==}
+  '@farmfe/js-plugin-tailwindcss@0.0.14':
+    resolution: {integrity: sha512-oQSrxCdiMT74QNnSm9K3u1DaajQNjqfaNB2nkrjLz6YdsXpxvfzye3Kp1vULYtLvHu9vzbsk0nEQrWqFdFsOqw==}
 
   '@farmfe/plugin-react-darwin-arm64@1.2.6':
     resolution: {integrity: sha512-LcIZs2dIZWXEp05wnBmCxYMeXAu66tJSyWamdSDengbyzgvIrD0Ap1+QIDlluEnz7XOFxSH3jJZuuZP8h8qNfA==}
@@ -3841,7 +3841,7 @@ snapshots:
       '@farmfe/core': 1.7.5
       less: 4.3.0
 
-  '@farmfe/js-plugin-tailwindcss@0.0.12':
+  '@farmfe/js-plugin-tailwindcss@0.0.14':
     dependencies:
       '@farmfe/core': 1.7.5
       '@tailwindcss/node': 4.0.0-beta.8
