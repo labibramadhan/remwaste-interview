@@ -1,16 +1,14 @@
 import { useRef, useEffect } from 'react';
 import { LuTriangleAlert, LuX } from 'react-icons/lu';
-import { useHeavyWasteDialog } from '../hooks/useHeavyWasteDialog';
+import { useHeavyWasteDialog } from '../../hooks/useHeavyWasteDialog';
+import { ActionButton } from '../atoms/buttons/ActionButton';
 
-interface OrderHeavyWasteDialogProps {
+interface HeavyWasteDialogProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export function OrderHeavyWasteDialog({
-  isOpen,
-  onClose,
-}: OrderHeavyWasteDialogProps) {
+export function HeavyWasteDialog({ isOpen, onClose }: HeavyWasteDialogProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
 
   const {
@@ -178,20 +176,14 @@ export function OrderHeavyWasteDialog({
                 );
               })}
             </div>
-
-            <div className="mt-3 text-sm text-gray-400">
-              {selectedTypes.length > 0
-                ? `${selectedTypes.length} waste type${selectedTypes.length > 1 ? 's' : ''} selected`
-                : 'No waste types selected'}
-            </div>
           </div>
 
-          {/* Waste Percentage - Visual Selection */}
-          <div className="mb-8">
-            <h4 className="text-white font-medium mb-4">
-              Approximate percentage of heavy waste:
+          {/* Percentage Selection */}
+          <div>
+            <h4 className="text-lg font-medium text-white mb-3">
+              Select Percentage
             </h4>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {percentageOptions.map((option) => {
                 const isSelected = selectedPercentage === option;
                 const isHeavyWaste = option !== 'No heavy waste';
@@ -265,19 +257,16 @@ export function OrderHeavyWasteDialog({
 
           {/* Dialog Actions - Fixed at bottom */}
           <div className="fixed bottom-0 left-0 right-0 p-4 bg-[#1C1C1C] border-t border-[#2A2A2A] flex justify-end gap-3 md:static md:border-0 md:p-0 md:mt-6">
-            <button
-              onClick={onClose}
-              className="px-4 py-2 rounded-md text-white bg-[#2A2A2A] hover:bg-[#3A3A3A] focus:outline-none focus:ring-2 focus:ring-[#0037C1]/50 cursor-pointer"
-            >
+            <ActionButton variant="secondary" onClick={onClose}>
               Cancel
-            </button>
-            <button
+            </ActionButton>
+            <ActionButton
+              variant="primary"
               onClick={handleConfirmAndClose}
-              className={`px-4 py-2 rounded-md text-white bg-[#0037C1] hover:bg-[#0037C1]/90 focus:outline-none focus:ring-2 focus:ring-[#0037C1]/50 ${!canSubmit ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
               disabled={!canSubmit}
             >
               Confirm
-            </button>
+            </ActionButton>
           </div>
         </div>
       </div>

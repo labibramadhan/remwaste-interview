@@ -18,7 +18,7 @@ const steps = [
   { label: 'Payment', icon: <LuCreditCard />, completed: false },
 ];
 
-export default function OrderHeaderSteps() {
+export function HeaderSteps() {
   const activeStepIndex = steps.findIndex((step) => step.active);
 
   // For mobile, only show the current active step and the next step

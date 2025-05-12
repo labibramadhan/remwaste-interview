@@ -1,7 +1,6 @@
 import { useSkips } from '../../skips/hooks/useSkips';
-import { OrderSkipGrid } from '../components/OrderSkipGrid';
 import { useOrderStore } from '../store/useOrderStore';
-import OrderHeaderSteps from '../components/OrderHeaderSteps';
+import { HeaderSteps, SkipSelectionGrid } from '../components/organisms';
 
 export default function SkipSelectionPage() {
   const { data: skips, isLoading, isError } = useSkips();
@@ -11,7 +10,7 @@ export default function SkipSelectionPage() {
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-8">
-      <OrderHeaderSteps />
+      <HeaderSteps />
       <div className="max-w-7xl mx-auto px-4 pb-32">
         <h2 className="text-2xl font-bold text-center mb-4">
           Choose Your Skip Size
@@ -20,7 +19,7 @@ export default function SkipSelectionPage() {
           Select the skip size that best suits your needs
         </p>
 
-        <OrderSkipGrid
+        <SkipSelectionGrid
           skips={skips}
           isLoading={isLoading}
           isError={isError}

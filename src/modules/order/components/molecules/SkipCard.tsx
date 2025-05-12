@@ -1,29 +1,25 @@
-import { Skip } from '../../../models/skip';
 import { useState } from 'react';
 import { FaArrowRight, FaCheck } from 'react-icons/fa6';
-import { LuInfo, LuTriangleAlert } from 'react-icons/lu';
-import { useOrderStore } from '../store/useOrderStore';
+import { LuInfo } from 'react-icons/lu';
+import { Skip } from '../../../../models/skip';
+import { SkipWarningBadge } from './SkipWarningBadge';
+import { StatusBadge } from '../atoms/badges/StatusBadge';
 
 interface SkipCardProps {
   skip: Skip;
   selected: boolean;
+  disabled: boolean;
   onSelect: (id: string) => void;
   onOpenHeavyWasteDialog: () => void;
 }
 
-export function OrderSkipCard({
+export function SkipCard({
   skip,
   selected,
+  disabled,
   onSelect,
   onOpenHeavyWasteDialog,
 }: SkipCardProps) {
-  // Check if the user has selected heavy waste
-  const hasHeavyWaste = useOrderStore((state) =>
-    state.selectors.hasHeavyWaste(),
-  );
-
-  // Only disable skips that don't allow heavy waste when heavy waste is actually selected
-  const disabled = hasHeavyWaste && !skip.allows_heavy_waste;
   const [showDisabledInfo, setShowDisabledInfo] = useState(false);
   const [isCardHovered, setIsCardHovered] = useState(false);
 
@@ -125,22 +121,8 @@ export function OrderSkipCard({
         {/* Warning indicators */}
         {(!skip.allowed_on_road || !skip.allows_heavy_waste) && (
           <div className="absolute bottom-3 left-2 z-20 space-y-2">
-            {!skip.allowed_on_road && (
-              <div className="bg-black/90 backdrop-blur-sm px-3 py-1.5 rounded-lg flex items-center gap-2">
-                <LuTriangleAlert className="w-4 h-4 text-yellow-500" />
-                <span className="text-xs font-medium text-yellow-500">
-                  Not Allowed On The Public Road
-                </span>
-              </div>
-            )}
-            {!skip.allows_heavy_waste && (
-              <div className="bg-black/90 backdrop-blur-sm px-3 py-1.5 rounded-lg flex items-center gap-2">
-                <LuTriangleAlert className="w-4 h-4 text-red-500" />
-                <span className="text-xs font-medium text-red-500">
-                  Not Suitable for Heavy Waste
-                </span>
-              </div>
-            )}
+            {!skip.allowed_on_road && <SkipWarningBadge type="road" />}
+            {!skip.allows_heavy_waste && <SkipWarningBadge type="heavy" />}
           </div>
         )}
       </div>
@@ -167,11 +149,11 @@ export function OrderSkipCard({
                 </span>
               </div>
               <div className="mt-1">
-                <span className="text-xs px-2 py-0.5 bg-amber-400 text-black font-medium rounded-full">
+                <StatusBadge variant="amber">
                   Save £
                   {(skip.original_price - skip.price_before_vat).toFixed(2)}{' '}
                   today!
-                </span>
+                </StatusBadge>
               </div>
             </>
           ) : (
