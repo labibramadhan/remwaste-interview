@@ -1,9 +1,9 @@
 import { defineConfig } from '@farmfe/core';
-import tailwind from '@farmfe/js-plugin-tailwindcss';
+import postcss from '@farmfe/js-plugin-postcss';
 
 export default defineConfig({
   compilation: {
     persistentCache: false,
   },
-  plugins: ['@farmfe/plugin-react', tailwind()],
+  plugins: ['@farmfe/plugin-react', postcss()],
 });
