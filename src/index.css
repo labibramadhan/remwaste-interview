@@ -1,22 +1,40 @@
-@import 'tailwindcss/preflight';
-@import 'tailwindcss/utilities';
-@import 'tailwindcss';
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
 
-@layer base {
-  html {
-    font-family: 'Inter', system-ui, sans-serif;
-  }
+
+:root {
+  --color-primary: #0037c1;
+  --color-card: #1c1c1c;
+  --color-card-border: #2a2a2a;
 }
 
-/* Custom utility classes */
-@layer components {
+@layer utilities {
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .border-primary {
+    border-color: var(--color-primary);
+  }
+
+  /* Card utilities */
+  .bg-card {
+    background-color: var(--color-card);
+  }
+  .bg-card-border {
+    background-color: var(--color-card-border);
+  }
+
+  /* Animation utilities */
   .animate-fade-in {
     animation: fadeIn 0.3s ease-in-out forwards;
   }
-}
 
-/* Custom animations */
-@layer utilities {
+  /* Define keyframes */
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -27,21 +45,14 @@
   }
 }
 
-/* Custom colors */
-@layer utilities {
-  .bg-primary {
-    background-color: #0037c1;
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
   }
-  .text-primary {
-    color: #0037c1;
-  }
-  .border-primary {
-    border-color: #0037c1;
-  }
-  .bg-card {
-    background-color: #1c1c1c;
-  }
-  .bg-card-border {
-    background-color: #2a2a2a;
+}
+
+@layer components {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out forwards;
   }
 }
