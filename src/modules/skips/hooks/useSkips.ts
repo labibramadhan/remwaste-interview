@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { Skip } from '../../../types/skip';
+import { API_URL } from '../../../config/env';
 
-const API_URL =
-  'https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft';
+const skipsApiUrl = `${API_URL}/skips/by-location?postcode=NR32&area=Lowestoft`;
 
 export function useSkips() {
   const getSkipImageUrl = (skipSize: string) => {
@@ -12,7 +12,7 @@ export function useSkips() {
   return useQuery({
     queryKey: ['skips'],
     queryFn: async () => {
-      const res = await fetch(API_URL);
+      const res = await fetch(skipsApiUrl);
 
       if (!res.ok) throw new Error('Failed to fetch skips');
       const data = await res.json();
