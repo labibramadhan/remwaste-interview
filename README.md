@@ -7,6 +7,10 @@ A modern web application for skip hiring services, built with React, TypeScript,
 - [SkipHire Showcase](#skiphire-showcase)
   - [Setup](#setup)
   - [Development](#development)
+  - [Code Quality Tools](#code-quality-tools)
+    - [Husky](#husky)
+    - [ESLint](#eslint)
+    - [Conventional Commits](#conventional-commits)
   - [Folder Structure](#folder-structure)
   - [Technology Stack](#technology-stack)
     - [Tailwind CSS](#tailwind-css)
@@ -69,6 +73,34 @@ Clear persistent cache local files:
 ```bash
 pnpm clean
 ```
+
+## Code Quality Tools
+
+### Husky
+
+This project uses Husky to enforce code quality standards and consistent commits:
+
+- **Pre-commit Hooks**: Automatically runs linters and formatters before each commit
+- **Commit Message Validation**: Ensures all commit messages follow the conventional commit format
+- **Prevents Bad Commits**: Stops commits that would break the build or violate code standards
+
+### ESLint
+
+ESLint is configured to enforce code quality and consistency:
+
+- **TypeScript Integration**: Full support for TypeScript-specific linting rules
+- **React Best Practices**: Enforces React-specific patterns and practices
+- **Auto-fixable Rules**: Many issues can be automatically fixed with `pnpm lint:fix`
+- **Custom Configuration**: Tailored ruleset balancing strictness with developer productivity
+
+### Conventional Commits
+
+All commits follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+
+- **Structured Format**: `type(scope): description` (e.g., `feat(auth): add login page`)
+- **Common Types**: feat, fix, docs, style, refactor, test, chore
+- **Automated Changelog**: Enables automatic generation of semantic version changelogs
+- **Clear History**: Makes the project history more readable and meaningful
 
 ## Folder Structure
 
