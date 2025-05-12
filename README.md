@@ -193,3 +193,65 @@ export function useSkips() {
   });
 }
 ```
+
+## UI/UX Improvements
+
+This project implements several significant improvements over the original [WeWantWaste](https://wewantwaste.co.uk/) website. The following changes enhance user experience and conversion rates:
+
+### Skip Selection Enhancements
+
+#### Original Version Issues
+![Original Skip Selection](docs/images/current-ss-1.png)
+
+- **Missing Information**: No indication of recommended or popular skip options
+- **Pricing Display**: Standard pricing without highlighting discounts
+- **Selection Feedback**: Limited visual feedback on skip selection
+
+#### Improved Version
+![Improved Skip Selection](docs/images/after-ss-1.png)
+
+- **Feature Badges**: Added "Popular" and "Recommended" badges to help users make informed decisions
+- **Enhanced Pricing**: Clear display of original price with discount, making the offer more compelling
+- **Selection Indicators**: Added check mark icons on selected skips for better user feedback
+- **Waste Type Selection**: Added ability to modify previously selected waste type from this page
+
+### Unavailable Skip Handling
+
+#### Original Version Issues
+![Original Unavailable Skips](docs/images/current-ss-2.png)
+
+- **Poor Organization**: Available skips mixed with unavailable ones, creating confusion
+- **Unclear Messaging**: Lack of explanation why certain skips are unavailable
+
+#### Improved Version
+![Improved Unavailable Skips](docs/images/after-ss-2.png)
+
+- **Clear Reasoning**: Added explicit explanation of why skips cannot be selected
+- **Action Options**: Included button to change waste type when larger skip sizes are needed
+- **Better Organization**: Improved skip ordering for better discoverability
+
+### Waste Selection Improvements
+
+#### Original Version Issues
+![Original Waste Selection](docs/images/current-ss-3.png)
+
+- **Limited Information**: Basic waste type selection without helpful context
+
+#### Improved Version
+![Improved Waste Selection](docs/images/after-ss-3.jpeg)
+
+- **Enhanced Information**: More detailed descriptions of waste types
+- **Improved Interface**: Better visual layout and interaction design
+- **User Guidance**: Clearer direction on waste type selection process
+
+### Bottom Bar Navigation Improvements
+
+#### Original Version
+![Original Bottom Bar](docs/images/current-ss-4.png)
+
+#### Improved Version
+![Improved Bottom Bar](docs/images/after-ss-4.png)
+
+- **Skip Summary Display**: Added catchy selected skip information including total hire days and saved price discount amount
+
+These improvements result in a more intuitive, informative, and conversion-focused user experience.
