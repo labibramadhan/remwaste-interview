@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { LuTriangleAlert, LuX } from 'react-icons/lu';
 import { useHeavyWasteDialog } from '../../hooks/useHeavyWasteDialog';
 import { ActionButton } from '../atoms/buttons/ActionButton';
+import { FaCheck } from 'react-icons/fa6';
 
 interface HeavyWasteDialogProps {
   isOpen: boolean;
@@ -72,7 +73,7 @@ export function HeavyWasteDialog({ isOpen, onClose }: HeavyWasteDialogProps) {
           </h3>
           <button
             onClick={onClose}
-            className="p-2 text-gray-400 hover:text-white hover:bg-[#2A2A2A] rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#0037C1]/50"
+            className="cursor-pointer p-2 text-gray-400 hover:text-white hover:bg-[#2A2A2A] rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#0037C1]/50"
             aria-label="Close dialog"
           >
             <LuX className="w-5 h-5" />
@@ -141,6 +142,7 @@ export function HeavyWasteDialog({ isOpen, onClose }: HeavyWasteDialogProps) {
                   >
                     <div className="aspect-square">
                       <img
+                        loading="lazy"
                         src={imagePath}
                         alt={`${type} waste`}
                         className="h-full w-full object-cover"
@@ -148,19 +150,7 @@ export function HeavyWasteDialog({ isOpen, onClose }: HeavyWasteDialogProps) {
                       {isSelected && (
                         <div className="absolute inset-0 flex items-center justify-center bg-[#0037C1]/20">
                           <div className="rounded-full bg-[#0037C1] p-1.5 border-2 border-white">
-                            <svg
-                              className="h-4 w-4 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M5 13l4 4L19 7"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={3}
-                              />
-                            </svg>
+                            <FaCheck className="text-white" />
                           </div>
                         </div>
                       )}
@@ -208,6 +198,7 @@ export function HeavyWasteDialog({ isOpen, onClose }: HeavyWasteDialogProps) {
                         </div>
                       ) : (
                         <img
+                          loading="lazy"
                           src={imagePath}
                           alt={`${option} visualization`}
                           className="h-full w-full object-cover"
@@ -217,19 +208,7 @@ export function HeavyWasteDialog({ isOpen, onClose }: HeavyWasteDialogProps) {
                       {isSelected && (
                         <div className="absolute inset-0 flex items-center justify-center bg-[#0037C1]/20">
                           <div className="rounded-full bg-[#0037C1] p-1.5 border-2 border-white">
-                            <svg
-                              className="h-4 w-4 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M5 13l4 4L19 7"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={3}
-                              />
-                            </svg>
+                            <FaCheck className="text-white" />
                           </div>
                         </div>
                       )}

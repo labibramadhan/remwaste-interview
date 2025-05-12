@@ -1,5 +1,6 @@
 import { LuChevronLeft, LuArrowRight } from 'react-icons/lu';
 import { Skip } from '../../../../models/skip';
+import { FaCheck } from 'react-icons/fa6';
 
 interface NavigationTabProps {
   skip: Skip;
@@ -47,17 +48,7 @@ export function NavigationTab({
             {skip.original_price &&
               skip.original_price > skip.price_before_vat && (
                 <span className="text-xs bg-amber-400 text-black px-2 py-0.5 rounded-full font-medium flex items-center">
-                  <svg
-                    className="w-3 h-3 mr-0.5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
+                  <FaCheck className="mr-0.5" />
                   You saved £
                   {(skip.original_price - skip.price_before_vat).toFixed(2)}!
                 </span>

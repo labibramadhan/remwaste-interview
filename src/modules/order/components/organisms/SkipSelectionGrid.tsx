@@ -62,7 +62,7 @@ export function SkipSelectionGrid({
     return (
       <ErrorState
         title="Failed to load skips."
-        message="Please try again later."
+        message="Please refresh the page or try again later."
       />
     );
   }
