@@ -194,6 +194,47 @@ export function useSkips() {
 }
 ```
 
+## Performance Optimizations
+
+### Image Optimization
+
+This project implements automated image optimization using Gulp and Sharp to improve page load times and performance:
+
+```javascript
+// gulpfile.js
+const gulp = require('gulp');
+const sharp = require('sharp');
+const path = require('path');
+const fs = require('fs-extra');
+
+async function optimizeFolder(subfolder) {
+  const srcDir = path.join(imagesDir, subfolder);
+  const destDir = path.join(imagesDir, subfolder + '_optimized');
+  await fs.ensureDir(destDir);
+  const files = (await fs.readdir(srcDir)).filter((file) =>
+    /\.(jpe?g|png|webp)$/i.test(file),
+  );
+
+  await Promise.all(
+    files.map(async (file) => {
+      const inputPath = path.join(srcDir, file);
+      const outputName = path.parse(file).name + '.webp';
+      const outputPath = path.join(destDir, outputName);
+      await sharp(inputPath).webp({ quality: 80 }).toFile(outputPath);
+    }),
+  );
+}
+```
+
+**Key Features:**
+
+- **WebP Conversion**: All images are converted to the modern WebP format for smaller file sizes
+- **Quality Optimization**: Images are optimized at 80% quality, balancing visual fidelity with performance
+- **Organized Structure**: Optimized images are stored in separate "_optimized" folders
+- **Broad Format Support**: Works with JPEG, PNG, and existing WebP files
+
+This optimization process significantly reduces image file sizes while maintaining visual quality, resulting in faster page loads and improved user experience.
+
 ## UI/UX Improvements
 
 This project implements several significant improvements over the original [WeWantWaste](https://wewantwaste.co.uk/) website. The following changes enhance user experience and conversion rates:
@@ -228,7 +269,7 @@ This project implements several significant improvements over the original [WeWa
 
 - **Clear Reasoning**: Added explicit explanation of why skips cannot be selected
 - **Action Options**: Included button to change waste type when larger skip sizes are needed
-- **Better Organization**: Improved skip ordering for better discoverability
+- **Better Organization**: Improved skip ordering for better discoverability, so all available skips comes before unavailable skips
 
 ### Waste Selection Improvements
 
