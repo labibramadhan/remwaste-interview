@@ -4,6 +4,38 @@ A modern web application for skip hiring services, built with React, TypeScript,
 
 **Live Demo:** [https://remwaste-interview.labib.dev](https://remwaste-interview.labib.dev)
 
+- [SkipHire Showcase](#skiphire-showcase)
+  - [Setup](#setup)
+  - [Development](#development)
+  - [Folder Structure](#folder-structure)
+  - [Technology Stack](#technology-stack)
+    - [Tailwind CSS](#tailwind-css)
+    - [Atomic Design Pattern](#atomic-design-pattern)
+    - [Zustand](#zustand)
+    - [TanStack Router](#tanstack-router)
+    - [TanStack Query](#tanstack-query)
+  - [Performance Optimizations](#performance-optimizations)
+    - [Image Optimization](#image-optimization)
+  - [UI/UX Improvements](#uiux-improvements)
+    - [Skip Selection Enhancements](#skip-selection-enhancements)
+      - [Original Version Issues](#original-version-issues)
+      - [Improved Version](#improved-version)
+    - [Unavailable Skip Handling](#unavailable-skip-handling)
+      - [Original Version Issues](#original-version-issues-1)
+      - [Improved Version](#improved-version-1)
+    - [Waste Selection Improvements](#waste-selection-improvements)
+      - [Original Version Issues](#original-version-issues-2)
+      - [Improved Version](#improved-version-2)
+    - [Bottom Bar Navigation Improvements](#bottom-bar-navigation-improvements)
+      - [Original Version](#original-version)
+      - [Improved Version](#improved-version-3)
+  - [Testing](#testing)
+    - [End-to-End (E2E) Testing with Cypress](#end-to-end-e2e-testing-with-cypress)
+      - [E2E Tests Setup](#e2e-tests-setup)
+      - [Running E2E Tests](#running-e2e-tests)
+      - [E2E Test Features](#e2e-test-features)
+
+
 ## Setup
 
 Install the dependencies:
