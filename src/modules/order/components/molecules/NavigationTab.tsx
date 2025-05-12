@@ -14,7 +14,10 @@ export function NavigationTab({
   onContinue,
 }: NavigationTabProps) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-[#1C1C1C] border-t border-[#2A2A2A] z-40 shadow-lg animate-fade-in">
+    <div
+      data-testid="bottom-bar"
+      className="fixed bottom-0 left-0 right-0 bg-[#1C1C1C] border-t border-[#2A2A2A] z-40 shadow-lg animate-fade-in"
+    >
       <div className="mx-auto px-3 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-4 max-w-7xl">
         {/* Compact mobile design */}
         <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-2 gap-y-2 items-center">

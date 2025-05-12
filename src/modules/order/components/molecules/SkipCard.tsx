@@ -25,10 +25,12 @@ export function SkipCard({
 
   return (
     <div
+      data-testid="skip-card"
+      data-unavailable={disabled}
       className={`
         group relative flex flex-col
         rounded-lg border-2 p-4 md:p-6 transition-all
-        ${selected ? 'border-[#0037C1] bg-[#0037C1]/10' : 'border-[#2A2A2A] hover:border-[#0037C1]/50'}
+        ${selected ? 'border-primary bg-[#0037C1]/10' : 'border-[#2A2A2A] hover:border-[#0037C1]/50'}
         bg-[#1C1C1C] text-white
         ${disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer'}
         `}
@@ -113,7 +115,10 @@ export function SkipCard({
 
         {/* Recommended badge */}
         {skip.recommended && (
-          <div className="absolute top-3 right-2 z-20 bg-[#0037C1] text-white px-3 py-1 rounded-full text-sm font-medium shadow-md flex items-center gap-2">
+          <div
+            data-testid="recommended-badge"
+            className="absolute top-3 right-2 z-20 bg-[#0037C1] text-white px-3 py-1 rounded-full text-sm font-medium shadow-md flex items-center gap-2"
+          >
             Recommended For Your Waste
           </div>
         )}
@@ -164,7 +169,10 @@ export function SkipCard({
           <span className="text-xs text-gray-400 mt-1">* VAT not included</span>
         </div>
         {skip.popular && (
-          <div className="bg-green-500/10 border border-green-500/20 rounded px-2 py-1">
+          <div
+            data-testid="popular-badge"
+            className="bg-green-500/10 border border-green-500/20 rounded px-2 py-1"
+          >
             <span className="text-xs font-medium text-green-400">
               Popular Choice
             </span>

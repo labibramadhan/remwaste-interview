@@ -298,3 +298,82 @@ This project implements several significant improvements over the original [WeWa
 - **Skip Summary Display**: Added catchy selected skip information including total hire days and saved price discount amount
 
 These improvements result in a more intuitive, informative, and conversion-focused user experience.
+
+## Testing
+
+### End-to-End (E2E) Testing with Cypress
+
+This project includes automated end-to-end tests using Cypress to ensure that user flows work as expected. The E2E tests simulate real user interactions with the application and verify that all components render correctly and that the application behaves as expected.
+
+#### E2E Tests Setup
+
+The E2E tests are configured in `cypress.config.js` and are located in the `cypress/e2e` directory. Test files use the `.cy.ts` extension, allowing for TypeScript support.
+
+```javascript
+// cypress.config.js
+module.exports = defineConfig({
+  e2e: {
+    baseUrl: 'http://localhost:5002',
+    specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
+    supportFile: 'cypress/support/e2e.ts',
+  },
+  env: {
+    API_URL: 'https://app.wewantwaste.co.uk/api',
+  },
+});
+```
+
+#### Running E2E Tests
+
+To run the E2E tests, follow these steps:
+
+1. Start the development server in one terminal:
+
+```bash
+pnpm dev
+```
+
+2. Open a new terminal and run the Cypress E2E tests:
+
+```bash
+pnpm test:e2e
+```
+
+This will open the Cypress Test Runner where you can select and run individual tests or run all tests at once.
+
+#### E2E Test Features
+
+The E2E tests cover the following key features:
+
+- **Skip Selection Page**: Tests the rendering and functionality of the skip selection page
+- **Network Stubbing**: Uses Cypress interceptors to mock API responses
+- **UI Interaction**: Tests clicking on skip cards and verifying selection
+- **Visual Indicators**: Checks that badges like "Popular" and "Recommended" appear correctly
+- **Error States**: Verifies that error messages appear when the API fails
+
+Example of an E2E test for the skip selection page:
+
+```typescript
+describe('Skip Selection Page', () => {
+  beforeEach(() => {
+    // Stub the API response for skips
+    cy.intercept('GET', '**/skips/by-location*', { fixture: 'skips.json' }).as('getSkips');
+    
+    // Visit the skip selection page directly
+    cy.visit('/order/select-skip');
+    
+    // Wait for the API call to complete
+    cy.wait('@getSkips');
+  });
+
+  it('displays skip selection page with options', () => {
+    // Verify that the page title displays correctly
+    cy.contains('h2', 'Choose Your Skip Size').should('be.visible');
+    
+    // Verify skips are loaded and displayed
+    cy.get('[data-testid="skip-card"]').should('have.length.at.least', 1);
+  });
+});
+```
+
+Data attributes (`data-testid`) are used throughout the application to provide reliable selectors for testing, making the tests more resilient to UI changes.
