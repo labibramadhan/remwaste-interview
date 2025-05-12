@@ -1,3 +1,5 @@
+@import 'tailwindcss/preflight';
+@import 'tailwindcss/utilities';
 @import 'tailwindcss';
 
 @layer base {
@@ -16,16 +18,30 @@
 /* Custom animations */
 @layer utilities {
   @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
 /* Custom colors */
 @layer utilities {
-  .bg-primary { background-color: #0037C1; }
-  .text-primary { color: #0037C1; }
-  .border-primary { border-color: #0037C1; }
-  .bg-card { background-color: #1C1C1C; }
-  .bg-card-border { background-color: #2A2A2A; }
+  .bg-primary {
+    background-color: #0037c1;
+  }
+  .text-primary {
+    color: #0037c1;
+  }
+  .border-primary {
+    border-color: #0037c1;
+  }
+  .bg-card {
+    background-color: #1c1c1c;
+  }
+  .bg-card-border {
+    background-color: #2a2a2a;
+  }
 }
