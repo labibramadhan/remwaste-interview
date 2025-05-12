@@ -1,4 +1,4 @@
-import { HeavyWastePercentage } from '../../../models/waste';
+import { HeavyWastePercentage } from '../../../types/waste';
 
 export const getHeavyWasteImage = (
   percentage: HeavyWastePercentage,

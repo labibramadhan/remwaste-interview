@@ -1,5 +1,5 @@
 import { LuPackageCheck, LuPencil, LuX } from 'react-icons/lu';
-import { HeavyWasteInformation } from '../../../../models/waste';
+import { HeavyWasteInformation } from '../../../../types/waste';
 import { StatusBadge } from '../atoms/badges/StatusBadge';
 
 interface HeavyWasteSummaryProps {

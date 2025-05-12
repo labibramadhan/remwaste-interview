@@ -9,7 +9,7 @@ import {
   HEAVY_WASTE_TYPES,
   HEAVY_WASTE_PERCENTAGE_OPTIONS,
   WASTE_TYPE_DESCRIPTIONS,
-} from '../../../models/waste';
+} from '../../../constants/waste';
 import {
   getHeavyWasteImage,
   getPercentageHelperText,

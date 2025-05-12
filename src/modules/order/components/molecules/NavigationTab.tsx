@@ -1,5 +1,5 @@
 import { LuChevronLeft, LuArrowRight } from 'react-icons/lu';
-import { Skip } from '../../../../models/skip';
+import { Skip } from '../../../../types/skip';
 import { FaCheck } from 'react-icons/fa6';
 
 interface NavigationTabProps {

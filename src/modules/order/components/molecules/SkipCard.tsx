@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaArrowRight, FaCheck } from 'react-icons/fa6';
 import { LuInfo } from 'react-icons/lu';
-import { Skip } from '../../../../models/skip';
+import { Skip } from '../../../../types/skip';
 import { SkipWarningBadge } from './SkipWarningBadge';
 import { StatusBadge } from '../atoms/badges/StatusBadge';
 

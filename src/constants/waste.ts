@@ -1,23 +1,8 @@
-export type HeavyWasteType =
-  | 'Soil'
-  | 'Concrete'
-  | 'Bricks'
-  | 'Tiles'
-  | 'Sand'
-  | 'Gravel'
-  | 'Rubble';
+import { HeavyWasteType, HeavyWastePercentage } from '../types/waste';
 
-export type HeavyWastePercentage =
-  | 'No heavy waste'
-  | 'Up to 5%'
-  | '5-20%'
-  | 'Over 20%';
-
-export interface HeavyWasteInformation {
-  types: HeavyWasteType[];
-  percentage: HeavyWastePercentage;
-}
-
+/**
+ * Array of all available heavy waste types
+ */
 export const HEAVY_WASTE_TYPES: HeavyWasteType[] = [
   'Soil',
   'Concrete',
@@ -28,6 +13,9 @@ export const HEAVY_WASTE_TYPES: HeavyWasteType[] = [
   'Rubble',
 ];
 
+/**
+ * Array of heavy waste percentage options
+ */
 export const HEAVY_WASTE_PERCENTAGE_OPTIONS: HeavyWastePercentage[] = [
   'No heavy waste',
   'Up to 5%',
@@ -35,6 +23,9 @@ export const HEAVY_WASTE_PERCENTAGE_OPTIONS: HeavyWastePercentage[] = [
   'Over 20%',
 ];
 
+/**
+ * Detailed descriptions for each heavy waste type
+ */
 export const WASTE_TYPE_DESCRIPTIONS: Record<HeavyWasteType, string> = {
   Soil: 'Including topsoil and subsoil',
   Concrete: 'Broken concrete and cement',

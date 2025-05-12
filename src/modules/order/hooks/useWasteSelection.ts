@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useOrderStore } from '../store/useOrderStore';
-import { HeavyWasteType, HeavyWastePercentage } from '../../../models/waste';
+import { HeavyWasteType, HeavyWastePercentage } from '../../../types/waste';
 
 /**
  * Hook for managing heavy waste type and percentage selection

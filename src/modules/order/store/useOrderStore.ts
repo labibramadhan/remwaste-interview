@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { HeavyWasteInformation } from '../../../models/waste';
+import { HeavyWasteInformation } from '../../../types/waste';
 
 interface OrderState {
   selectedSkipId: string | null;

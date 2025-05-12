@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Skip } from '../../../../models/skip';
+import { Skip } from '../../../../types/skip';
 import { useOrderStore } from '../../store/useOrderStore';
 import { LoadingSpinner } from '../atoms/indicators/LoadingSpinner';
 import { ErrorState } from '../atoms/indicators/ErrorState';

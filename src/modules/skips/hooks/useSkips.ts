@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { Skip } from '../../../models/skip';
+import { Skip } from '../../../types/skip';
 
 const API_URL =
   'https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft';
@@ -23,7 +23,6 @@ export function useSkips() {
           skip.price_before_vat + (10 / 100) * skip.price_before_vat,
         image_url: getSkipImageUrl(skip.size.toString()),
         recommended: skip.size === 8,
-        limited_availability: skip.size === 8,
         popular: skip.size === 6,
       }));
 

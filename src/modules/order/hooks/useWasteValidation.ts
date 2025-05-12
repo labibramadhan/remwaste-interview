@@ -1,4 +1,4 @@
-import { HeavyWasteType, HeavyWastePercentage } from '../../../models/waste';
+import { HeavyWasteType, HeavyWastePercentage } from '../../../types/waste';
 
 /**
  * Hook for heavy waste validation logic
