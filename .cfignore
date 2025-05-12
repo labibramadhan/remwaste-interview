@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Dev files
+.vscode/
+.idea/
+.DS_Store
+.git/
+.github/
+.husky/
+
+# Build artifacts
+.farm/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Test files
+**/*.test.*
+**/*.spec.*
+coverage/
+
+# Source files (since we're deploying the built files)
+src/
+
+# Config files that aren't needed for deployment
+.eslintrc*
+.prettierrc*
+.editorconfig
+tsconfig.json
+jest.config.js
